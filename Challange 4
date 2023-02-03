@@ -1,0 +1,58 @@
+/*Challange from https://www.codecademy.com/resources/blog/c-plus-plus-code-challenges-for-beginners
+This is Challange 4 which ask for the temperature and unit of measurement and changes same temperature
+to any other possible unit of  meausrement.
+/*/
+#include <iostream>
+#include <limits>
+
+using namespace std;
+
+int main()
+{
+    double temp;
+    while (true)
+    {
+        cout << "\nEnter the temperature: ";
+        if (cin >> temp)
+            break;
+        
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Invalid Input. Please try again." << endl;
+    }
+    char mm;
+        double cc, fh, kl;
+        cout <<"Enter the Measurement unit C)elcius, F)ahrenheit, K)elvin: ";
+        cin >> mm;
+        if (mm == 'k' || mm == 'K')
+        {
+            cc = temp - 273.15;
+            fh = 1.8 * (temp - 273.15) + 32;
+            cout << temp << " kelvin is " << cc << "° Celcius and " 
+            << fh << " ° Fahrenheit. " << endl;
+
+        }
+        else if (mm == 'c' || mm == 'C')
+        {
+            fh = 1.80 * temp + 32;
+            kl = temp + 273.15;
+            cout << temp << "° celcius is " << fh << "° Fahrenheit and "
+            << kl << " Kelvin. " << endl;
+        }
+        else if (mm == 'f' || mm == 'F')
+        {
+            cc = ( temp - 32) / 1.80;
+            kl = (temp + 459.67) * 5 / 9;
+
+            cout << temp << "° Farenheit is " << cc << "° Celcius and "
+            << kl << " Kelvin. " << endl;
+        }
+        else
+        {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid Input. Please try again." << endl; 
+        }
+
+    return 0;
+}

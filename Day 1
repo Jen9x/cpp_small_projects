@@ -1,0 +1,19 @@
+/*Challange from https://www.codecademy.com/resources/blog/c-plus-plus-code-challenges-for-beginners
+This is Challange 2, 1 was too easy lol
+/*/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i1, i2, sum;
+    cout << "\nEnter a First Integer to Add: ";
+    cin >> i1;
+    cout << "Enter a Second Integer to Add: ";
+    cin >> i2;
+    sum = i1 + i2;
+    cout << "The sum is " << sum << "." << endl;
+
+    return 0;
+}
